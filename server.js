@@ -27,7 +27,7 @@ mongoose
 
 // Allow requests from the frontend url
 app.use(cors({
-    origin: 'https://passwordresetfelink.netlify.app/',
+    origin: 'https://passwordresetfelink.netlify.app',
     methods: 'GET,POST,PUT,DELETE',
     credentials: true,
 }));
