@@ -6,6 +6,7 @@ require('dotenv').config(); // Load environment variables from .env
 const authRoutes = require('./routes/authRoutes'); // Import auth routes
 
 const app = express();
+const cors = require('cors');
 
 // Middleware
 app.use(bodyParser.json());
@@ -23,6 +24,14 @@ mongoose
         console.error('Could not connect to MongoDB...', err);
         process.exit(1); // Exit the process if DB connection fails
     });
+
+// Allow requests from the frontend
+app.use(cors({
+    origin: 'http://localhost:5173',
+    methods: 'GET,POST,PUT,DELETE',
+    credentials: true,
+}));
+    
 
 // Routes
 app.use('/api/v1/auth', authRoutes);
