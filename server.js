@@ -25,9 +25,9 @@ mongoose
         process.exit(1); // Exit the process if DB connection fails
     });
 
-// Allow requests from the frontend
+// Allow requests from the frontend url
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://passwordresetfelink.netlify.app/',
     methods: 'GET,POST,PUT,DELETE',
     credentials: true,
 }));
